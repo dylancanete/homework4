@@ -1,0 +1,187 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+  background-color: #ddd;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-size: 50px;
+  line-height: 1;
+  padding: 50px 0;
+  text-align: center;
+}
+
+h2{
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+nav li{
+  display:inline;
+  padding-right:20px;
+}
+
+nav a{
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none; 
+}
+
+nav a:hover{
+  text-decoration: underline;
+  border: 2px #000000;
+}
+
+.skip a{
+  background: #ffffff;
+  left: 0;
+  padding: 6px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+  position: absolute;
+  top: -40px;
+  overflow: hidden;
+}
+
+.skip a:active, .skip a:focus{
+  top:0;
+  overflow: visible;
+  border:2px #000000;
+  position: absolute;
+  outline-color: #000000;
+  outline-width: 2px;
+}
+
+nav a:active,nav a:focus{
+  outline-color: #000000;
+  outline-width: 2px;
+}
+  
+
+footer{
+  background-color: #000000;
+  color: #ffffff;
+  grid-column: 1 / -1; 
+  grid-row: 7 / span 1; 
+  padding-top: 30px;
+  text-align: center;
+}
+
+nav{
+  background-color: #ddd;
+  padding: 20px 0; 
+  grid-column: 1/-1;
+  grid-row: 1 / span 1;
+}
+
+header{
+  background: url('../images/header.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  height: 400px;
+  grid-column: 1/ -1;
+  grid-row: 2/ span 1;
+  background-color:#000000;
+}
+
+header p{
+  color: #ffffff;
+  font-size: 24px;
+  padding: 0 100px;
+  text-align: center;
+}
+
+
+.container{
+  display:grid;
+  grid-row-gap: 15px;
+  grid-template-columns: 100px 400px 100px;
+  grid-template-rows: 30px 5px 100px;
+
+}
+.about, .method, .clients, .contact{
+  margin: auto;
+  vertical-align: middle;
+}
+
+.about-image, .method-image, .clients-image, .contact-image{
+  column-span: all;
+  overflow: hidden;
+  max-height: 700px;
+}
+
+.about, .about-image{
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+}
+
+.method, .method-image{
+  grid-column: 2 / span 1;
+  grid-row: 4 / span 1;
+}
+
+
+.clients, .clients-image{
+  grid-column: 2 / span 1;
+  grid-row: 5 / span 1;
+}
+
+
+.contact, .contact-image{
+  grid-column: 2 / span 1;
+  grid-row: 6 / span 1;
+}
+
+.text-block{
+  background-color: rgba(255, 255, 255, .8);
+  border: 10px #000000;
+  padding: 30px;
+  margin: auto;
+  vertical-align: middle;
+}
+
+
+
+@media all and (min-width: 800px){
+
+  .container{
+  grid-template-columns: 50px auto 500px auto 50px;
+  grid-template-rows: 70px 400px 400px 400px 400px 400px 100px;
+  }
+
+  nav{
+    background-color: #ddd;
+    text-align: right;
+    padding: 35px 0px;
+    align-self: center;
+  }
+
+  .about, .clients, .method-image, .contact-image{
+    grid-column: 3 / span 2;
+  }
+
+  .about-image, .clients-image, .method, .contact{
+    grid-column: 2 / span 2;
+    }
+
+}
+
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto;
+  }
+
+  .skip a{
+    -webkit-transition: none;
+    transition: none;
+  }
+}
